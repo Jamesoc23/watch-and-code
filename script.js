@@ -7,7 +7,11 @@ var toDoList = {
           console.log("Your to do list is empty")
       } else {
         for (i=0; i < this.todos.length; i++){
-          console.log(this.todos[i].toDoText);
+            if (this.todos.completed === true) {
+                console.log("(x)", this.todos[i].toDoText);
+            } else {
+                console.log("( )", this.todos[i].toDoText);
+                }
         }
       }
 
@@ -19,7 +23,7 @@ var toDoList = {
         });
     },
     changeToDos: function(position, changeToDo) {
-        this.todos[i] = {
+        this.todos[position] = {
             toDoText: changeToDo,
             completed: false
         };
@@ -32,5 +36,26 @@ var toDoList = {
         todo.completed = !todo.completed;
         this.displayToDos();
     }
+    toggleAll: function() {
+        // If everything is true, make it false
+        todosAll = this.todos.length;
+        todosCompleted = 0;
+        for (i=0; i < this.todos.length; i++){
+            if (this.todos.completed === true) {
+                todosCompleted++;
+            }
+
+        if (todosCompleted === todosAll) {
+            for (i=0; i < this.todos.length; i++){
+                this.todosCompleted.completed[i] = false;
+            }
+        } else {
+            for (i=0; i < this.todos.length; i++){
+                this.todosCompleted.completed[i] = true;
+            }
+        }
+
+    }
+
   }
 
