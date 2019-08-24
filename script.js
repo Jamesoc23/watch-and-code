@@ -58,4 +58,15 @@ var toDoList = {
     }
 
   }
+};
 
+var displayToDoButton = document.getElementById('displayToDoButton')
+var toggleAllButton = document.getElementById('toggleAllButton')
+
+displayToDoButton.addEventListener('click', function() {
+    toDoList.displayToDos()
+})
+
+displayToDoButton.addEventListener('click', function() {
+    toDoList.toggleAll()
+})
